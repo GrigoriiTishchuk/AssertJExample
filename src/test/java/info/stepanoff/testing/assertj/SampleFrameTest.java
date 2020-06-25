@@ -20,62 +20,23 @@ public class SampleFrameTest {
     }
 
     
+   
+    
     @Test
     public void Test1() {
         window.textBox("MainStr").enterText("hushers");
-        window.textBox("SubStr").enterText("hu");
-        window.button("buttonSS").click();
-        window.textBox("SubStr").enterText("she");
-        window.button("buttonSS").click();
-        window.textBox("SubStr").enterText("hers");
+        window.textBox("SubStr").enterText("ddd");
         window.button("buttonSS").click();
         window.button("buttonSearch").click();
-        window.textBox("Res").requireText("{1=[0], 4=[1], 6=[2]}");
+        window.textBox("Res").requireText("{}");
     }
     
     @Test
     public void Test2() {
-        window.textBox("MainStr").enterText("hushers");
-        window.textBox("SubStr").enterText("ddd");
-        window.button("buttonSS").click();
-        window.button("buttonSearch").click();
-        window.textBox("Res").requireText("{}");
-    }
-    
-    @Test
-    public void Test3() {
         window.button("buttonSearch").requireDisabled();
     }
     
-    @Test
-    public void Test4() {
-        window.textBox("MainStr").enterText("hushers");
-        window.textBox("SubStr").enterText("ddd");
-        window.button("buttonSS").click();
-        window.button("buttonSearch").click();
-        window.button("buttonCancel").click();
-        window.textBox("MainStr").requireText("");
-        window.textBox("SubStr").requireText("");
-    }
     
-    @Test
-    public void Test5() {
-        window.textBox("MainStr").enterText("hushers");
-        window.textBox("SubStr").enterText("ddd");
-        window.button("buttonSS").click();
-        window.button("buttonSearch").click();
-        window.textBox("Res").requireText("{}");
-        window.button("buttonCancel").click();
-        window.textBox("MainStr").enterText("hushers");
-        window.textBox("SubStr").enterText("hu");
-        window.button("buttonSS").click();
-        window.textBox("SubStr").enterText("she");
-        window.button("buttonSS").click();
-        window.textBox("SubStr").enterText("hers");
-        window.button("buttonSS").click();
-        window.button("buttonSearch").click();
-        window.textBox("Res").requireText("{1=[0], 4=[1], 6=[2]}");
-    }
 
     @After
     public void tearDown() {
